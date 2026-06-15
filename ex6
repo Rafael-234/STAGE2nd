@@ -1,0 +1,12 @@
+def triplerEspaces(ch):
+    "fonction qui triple les espaces entre mots dans la chaîne ch"
+    return ch.replace(" ", " " * 3)
+
+NomF = input("Nom du fichier : ")
+fichier = open(NomF, 'r+')
+
+lignes = map(triplerEspaces, fichier.readlines())
+
+fichier.seek(0)
+fichier.writelines(lignes)
+fichier.close()
